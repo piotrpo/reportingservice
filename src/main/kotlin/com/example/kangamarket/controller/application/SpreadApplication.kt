@@ -3,8 +3,6 @@ package com.example.kangamarket.controller.application
 import com.example.kangamarket.controller.model.MarketSpread
 import com.example.kangamarket.controller.model.Ranking
 import com.example.kangamarket.controller.model.SpreadsResponse
-import io.micrometer.core.instrument.MockClock
-import io.micrometer.core.instrument.MockClock.clock
 import org.slf4j.LoggerFactory
 import org.springframework.stereotype.Service
 import java.time.Clock
@@ -44,6 +42,7 @@ class SpreadApplication(val dataHarvester: DataHarvester) {
             isRefreshOnGoing.store(false)
         }
     }
+
     fun prepareSpreadsResponse(harvestData: List<MarketSpread?>): SpreadsResponse {
         val marketGroups = harvestData.filterNotNull().groupBy { marketCategory(it) }
         val spreadsResponse = SpreadsResponse(
@@ -57,7 +56,6 @@ class SpreadApplication(val dataHarvester: DataHarvester) {
         return spreadsResponse
     }
 }
-
 
 
 fun marketCategory(marketSpread: MarketSpread): MarketGroup {
