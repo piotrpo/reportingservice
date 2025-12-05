@@ -18,6 +18,7 @@ This client offers 2 methods
 Http requests are defined in [apicalls.http](src/apicalls.http) to make calls from JetBrains tools.
 
 Here the curl commands to the application endpoints
+
 `curl -X GET --location "http://localhost:8080/api/spread/ranking" \
 -H "Content-Type: application/json"`
 
