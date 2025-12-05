@@ -1,0 +1,11 @@
+### Get Report
+GET http://localhost:8080/api/spread/ranking
+Content-Type: application/json
+
+### Request recalculation
+POST http://localhost:8080/api/spread/calculate
+Authorization:  Bearer ABC123
+
+### Request recalculation - should fail with 403
+POST http://localhost:8080/api/spread/calculate
+Authorization:  Bearer wrongToken

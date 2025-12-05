@@ -1,0 +1,10 @@
+### Markets
+GET https://public.kanga.exchange/api/market/pairs
+
+
+
+### Orderbook
+@market = BTC_USD
+
+GET https://public.kanga.exchange/api/market/orderbook/{{market}}
+
